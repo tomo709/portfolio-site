@@ -1,0 +1,476 @@
+@charset "utf-8";
+
+/* kv部分 */
+.kv {
+    height: 670px;
+    position: relative;
+    background-color: #fff8e8;
+    overflow: hidden;
+}
+
+.kv_slogan {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    transform: translate(-40%, -40%);
+    font-family: "Chango", sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.5em;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.kv_logo {
+    width: 80vw;
+    position: absolute;
+    top: 40%;
+    right: -130px;
+    object-fit: cover;
+    /* 画像がコンテナを埋めるように切り取られる */
+}
+
+.kv_animation {
+    width: 70vw;
+    aspect-ratio: 1/1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    translate: -50% 50%;
+    animation: 20s linear infinite rotation;
+    z-index: -10;
+}
+
+@keyframes rotation {
+    0% {
+        rotate: 0;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+/* 画面幅が大きくなった時のkv設定 */
+@media (750px < width) {
+    .kv {
+        height: 740px;
+    }
+
+    .kv_slogan {
+        font-size: 4rem;
+        top: 35%;
+        left: 20%;
+    }
+
+    .kv_logo {
+        width: 50vw;
+        top: 30%;
+    }
+
+    .kv_animation {
+        width: 50vw;
+    }
+}
+
+/* main設定 */
+.main {
+    padding: 0 10%;
+}
+
+.inner {
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 30px 20px;
+    line-height: 1.8em;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 16px;
+}
+
+/* 画面幅が大きくなった時のmain設定 */
+@media (800px < width) {
+    .main {
+        padding: 0 15%;
+    }
+}
+
+/* section共通設定 */
+.work,
+.Profile,
+.skill,
+.contact {
+    background-color: var(--main-color);
+    border-radius: 20px;
+    padding: 20px 8px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    box-shadow: 1px 2px 10px 1px #aba18c;
+}
+
+/* リンク先に飛んだ時の上の余白設定 */
+.contents_title:before {
+    content: "";
+    display: block;
+    height: 60px;
+    /* 調整したい高さ */
+    margin-top: -60px;
+    /* heightと同じサイズのネガティブマージン */
+    visibility: hidden;
+    /*見えないようにする*/
+}
+
+.inner h2 {
+    font-family: "ADLaM Display", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--title-color);
+    text-shadow: 1px 1px 1px #473029;
+}
+
+.contents_title p {
+    text-align: center;
+}
+
+/* 画面幅が大きくなった時のsection共通設定 */
+@media (800px < width) {
+    .inner h2 {
+        font-size: 4rem;
+        margin-bottom: 10px;
+    }
+
+    .contents_title:before {
+        height: 160px;
+        /* 調整したい高さ */
+        margin-top: -160px;
+        /* heightと同じサイズのネガティブマージン */
+    }
+}
+
+/* Works設定 */
+.works_card_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.works_card {
+    max-width: 400px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 1px 3px 10px 1px #adadad;
+    border: 1px var(--title-color) solid;
+    transition: 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.works_card:hover {
+    transform: scale(1.1);
+    border: 1px var(--bg-color) solid;
+}
+
+/* ホバーしたときに背景から画像が出てくる */
+.comeout_img {
+    position: relative;
+    width: fit-content;
+    z-index: 1;
+}
+
+.comeout_img::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
+    width: 50%;
+    height: 50%;
+    background-image: url("../img/haikeineko.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform 0.7s ease, opacity 0.3s ease-in-out;
+    will-change: transform, opacity;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ホバー時の処理 */
+.comeout_img:hover {
+    z-index: 10;
+    /* 他のカードより前面に */
+}
+
+/* ホバー時に z-index を上げて可視化させる */
+.comeout_img:hover::before {
+    opacity: 1;
+    transform: translateY(-180%);
+    z-index: 0;
+}
+
+.works_img {
+    border: var(--title-color) 3px double;
+}
+
+.work_title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.works_name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    background-color: var(--bg-color);
+    padding: 1px 5px;
+    text-align: center;
+    /* margin-right: 20px; */
+    border-radius: 20px;
+}
+
+.works_kinds {
+    /* flex-grow: 1; */
+    font-size: 15px;
+    /* width: 50%; */
+}
+
+.works_card p {
+    text-align: center;
+}
+
+.works_btn,
+.Profile_btn {
+    margin: 0 10px;
+    text-align: right;
+    font-weight: 700;
+}
+
+.works_btn a,
+.Profile_btn a {
+    text-shadow: 1px 1px 3px #3a3a3a;
+    border-bottom: 3px double var(--title-color);
+    transition: 1s linear;
+}
+
+.works_btn a:hover,
+.Profile_btn a:hover {
+    opacity: 0.5;
+    border-bottom: 1px solid var(--title-color);
+    font-size: 1.1em;
+}
+
+/* 画面幅が大きくなった時のWorks設定 */
+@media (1000px < width) {
+    .works_card_box {
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 30px 60px;
+        gap: 40px;
+    }
+
+    .works_card {
+        margin: 0;
+        padding: 25px 10px;
+    }
+
+    .works_name {
+        font-size: 1.4rem;
+    }
+
+    .works_kinds {
+        flex-grow: 0;
+        width: auto;
+    }
+
+    .works_btn,
+    .Profile_btn {
+        font-size: 2rem;
+        margin: 20px 55px;
+    }
+}
+
+/* Profile設定 */
+.Profile_card {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 1px 3px 10px 1px #adadad;
+    border: 1px var(--title-color) solid;
+}
+
+.Profile_img {
+    background-image: url(../img/icon.png);
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Profile h3 {
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.Profile h4 {
+    text-align: center;
+    color: var(--title-color);
+}
+
+/* 画面幅が大きくなった時のProfile設定 */
+@media (800px < width) {
+    .Profile_card {
+        display: flex;
+        align-items: center;
+    }
+
+    .Profile_img {
+        width: 200%;
+    }
+
+    .Profile_text_card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Skill設定 */
+.skill_card {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 1px 3px 10px 1px #adadad;
+    border: 1px var(--title-color) solid;
+}
+
+.skill_name {
+    margin-top: 5px;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.skill_sub {
+    text-align: center;
+}
+
+.skill_coding_img {
+    background-image: url(../img/Coding.png);
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.skill_design_img {
+    background-image: url(../img/design.png);
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 画面幅が大きくなった時のSkill設定 */
+@media (1100px < width) {
+    .skill_card_box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .skill_card {
+        margin: 20px 50px;
+    }
+
+    .skill_design_img,
+    .skill_coding_img {
+        height: 150px;
+    }
+}
+
+/* contact設定 */
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.entryTable input[type="text"],
+.entryTable input[type="email"],
+.entryTable input[type="tel"],
+.entryTable textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 3px 10px 1px #adadad inset;
+}
+
+.entryTable input[type="text"]:focus,
+.entryTable input[type="email"]:focus,
+.entryTable input[type="tel"]:focus,
+.entryTable textarea:focus {
+    outline: none;
+    border: 1px solid var(--title-color);
+}
+
+.contact_text {
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+
+.contact tr {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.contact_btn {
+    margin: 20px;
+}
+
+.contact_btn input {
+    background-color: var(--title-color);
+    padding: 5px 50px;
+    border: 3px solid var(--title-color);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 1px 1px 3.5px #250000;
+}
+
+.contact_btn input:hover {
+    background-color: transparent;
+    color: var(--title-color);
+    box-shadow: 2px 2px 1px 1px #250000 inset;
+}
+
+.contact p {
+    text-align: center;
+}
+
+@media (700px < width) {
+
+    .entryTable input[type="text"],
+    .entryTable input[type="email"],
+    .entryTable input[type="tel"],
+    .entryTable textarea {
+        width: 40vw;
+        justify-content: center;
+    }
+
+    .entryTable input[type="email"] {
+        display: flex;
+        flex-direction: column;
+    }
+}

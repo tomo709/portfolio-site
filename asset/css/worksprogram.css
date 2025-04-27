@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+/* main設定 */
+.main {
+    padding: 0 5%;
+    margin-top: 100px;
+}
+
+.inner {
+    margin: 10em auto 4em;
+    border-radius: 20px;
+    padding: 30px 20px;
+    line-height: 1.8em;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 16px;
+    background-color: var(--main-color);
+    box-shadow: 1px 2px 10px 1px #aba18c;
+}
+
+/* 画面幅が大きくなった時のmain設定 */
+@media (800px < width) {
+    .main {
+        padding: 0 15%;
+        margin-top: 150px;
+    }
+}
+
+/* タイトル設定 */
+.title {
+    font-size: 3.5rem;
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-family: "ADLaM Display", "sans-serif";
+}
+
+/* works設定 */
+.works_box {
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 30px 20px;
+    line-height: 1.8em;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.works_top_text h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.works_top_text a {
+    border-bottom: 1px solid #4169e1;
+    color: #4169e1;
+}
+
+.works_top_img {
+    margin-top: 2em;
+    padding: 1em 2em;
+    border-radius: 20px;
+    background: linear-gradient(-212deg,
+            rgba(245, 245, 245, 1) 0%,
+            rgba(230, 230, 230, 1) 100%);
+}
+
+.work_top_list,
+.color_information,
+.Design_text {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom: 0.4em;
+}
+
+.Design {
+    text-align: center;
+}
+
+.works_page_btn {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.works_page_btn a {
+    background-color: var(--title-color);
+    padding: 5px 50px;
+    border: 3px solid var(--title-color);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 3px 4px 2px #544e46;
+}
+
+/* 画面が大きくなった時の設定 */
+@media (1000px < width) {
+    .title {
+        font-size: 4.5rem;
+        margin-bottom: 1em;
+    }
+
+    .works_box {
+        padding: 3.5em;
+    }
+
+    .works_top_img {
+        margin: 2em auto 0;
+        width: 80%;
+    }
+
+    .works_top_text a:hover {
+        opacity: 0.5;
+        border-bottom: none;
+    }
+
+    .color_img {
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    .Design {
+        display: flex;
+        gap: 2.5em;
+    }
+
+    .works_page_btn a:hover {
+        background-color: transparent;
+        color: var(--title-color);
+        box-shadow: 2px 2px 1px 1px #250000 inset;
+    }
+}
+
+/* topに戻るボタン設定 */
+.page_top {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 50px;
+    bottom: 40px;
+    background: var(--bg-color);
+    opacity: 0.7;
+    border: 1px solid var(--title-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: 1s;
+    z-index: 5;
+}
+
+.page_top a:hover {
+    opacity: 0.5;
+}
+
+.page_top a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+}
+
+.page_top a::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f106";
+    font-size: 30px;
+    color: var(--title-color);
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -17px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+
+/* 背景画像のずれ調整 */
+@media (800px < width) {
+
+    .bg__img,
+    .bg__img2 {
+        width: 40%;
+    }
+
+    .bg__img {
+        top: 50px;
+    }
+
+    .bg__img2 {
+        top: 750px;
+    }
+}
