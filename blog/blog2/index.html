@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ホバーアニメーション</title>
+
+    <link rel="stylesheet" href="./asset/css/destyle.css" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="./asset/css/common.css" />
+    <!-- 共通 -->
+    <link rel="stylesheet" href="./asset/css/blog.css" />
+    <!-- 専用CSS -->
+
+    <!-- javascript -->
+    <script src="./asset/js/jquery-3.7.1.min.js"></script>
+
+    <!-- ファビコン -->
+    <link rel="icon" href="./asset/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./asset/img/favicon.png" />
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Chango&family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrap">
+        <!-- ローディングアニメーション -->
+        <div id="splash">
+            <div id="splash_logo" class="load">
+                <img src="./asset/img/load1.png" alt="" class="load1" />
+                <img src="./asset/img/load2.png" alt="" class="load2" />
+                <img src="./asset/img/load3.png" alt="" class="load3" />
+                <img src="./asset/img/load4.png" alt="" class="load4" />
+            </div>
+        </div>
+
+        <div class="bg__img"></div>
+        <div class="bg__img2"></div>
+
+        <!-- 背景のドーナツ画像 -->
+        <header class="header" id="header">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <a href="#"><img src="./asset/img/icon.png" alt="猫とドーナツのイラスト" /></a>
+                </div>
+                <nav class="g-nav">
+                    <ul>
+                        <li class="link-text" id="link-text">Link</li>
+                        <li class="nav-item"><a href="#">Home</a></li>
+                        <li class="nav-item"><a href="#">Work</a></li>
+                        <li class="nav-item"><a href="#">Skill</a></li>
+                        <li class="nav-item"><a href="#">Profile</a></li>
+                        <li class="nav-item"><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="#"><button class="g-nav_btn" id="g-nav_btn"></button></a>
+            </div>
+        </header>
+        <!--/header -->
+        <div class="kv break">
+            <h1 class="title">
+                    ホバーアニメーションを<wbr />実装する方法！
+                </h1>
+        </div>
+        <!-- /kv -->
+        <main class="main">
+            <div class="inner">
+                <section class="introduction_container">
+                    <div class="introduction_text">
+                        <h2>テーマと背景</h2>
+                        <p>
+                                今回は画像やクリックできる要素にホバーしたときのアニメーションを実装していきたいと思います。
+                            </p>
+                        <p>
+                                自分のポートフォリオに見ている人が楽しくなるようなアニメーションを取り入れたいと思い、マウスがホバーしたときに、後ろから猫のイラストが出てくると面白いかなと思ったので、色々な実装方法や動きを調べてみました。
+                            </p>
+                    </div>
+                    <div class="toc">
+                        <p class="toc_title">目次</p>
+                        <ol>
+                            <li>
+                                <a href="#blog_container">①ホバーしたときにイラストが上や左右から出てくるアニメーション</a>
+                            </li>
+                            <li>
+                                <a href="#blog_container2">②ホバーしたときにイラストが背景から広がって出てくるアニメーション</a>
+                            </li>
+                            <li><a href="#conclusion">③まとめ</a></li>
+                        </ol>
+                    </div>
+                </section>
+                <section class="blog_container" id="blog_container">
+                    <h2>
+                            ①ホバーしたときにイラストが上、右から出てくる
+                            <br />アニメーション
+                        </h2>
+                    <p>
+                            まずはホバーしたときにイラストが上から出てくるアニメーションを実装していきたいと思います。
+                        </p>
+                    <p>実装してみるとこんな感じになります。</p>
+                    <div class="card_box">
+                        <div class="comeout_img">
+                            <div class="hover_card">
+                                <a href="">上から画像が飛び出す</a>
+                            </div>
+                        </div>
+                        <div class="comeout_img2">
+                            <div class="hover_card2">
+                                <a href="">右から画像が飛び出す</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p>コードはこちらです。</p>
+                    <div class="codepen">
+                        <iframe scrolling="no" title="Untitled" src="https://codepen.io/pnoozdnb-the-vuer/embed/preview/XJWWXjV?default-tab=html%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen
+                            <a href="https://codepen.io/pnoozdnb-the-vuer/pen/XJWWXjV">
+                                Untitled</a>
+                            by kinako (<a href="https://codepen.io/pnoozdnb-the-vuer">@pnoozdnb-the-vuer</a>) on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                    <h3>
+                            マウスがホバーしたときに上から画像が出てくるアニメーションの動き
+                        </h3>
+                    <p>
+                            通常状態では背景画像は透明でhover_cardの下に隠れている状態で、マウスがホバーしたときに背景画像が上方向にスライドしながら現れるようになっています。
+                        </p>
+                    <h3>
+                            マウスがホバーしたときに右から画像が出てくるアニメーションの動き
+                        </h3>
+                    <p>
+                            上から画像が出てくる動きとほぼ同じ設定で、translateYをtranslateXに変更して右から画像がスライドしながら現れるように設定しています。
+                        </p>
+                </section>
+                <section class="blog_container2" id="blog_container2">
+                    <h2>
+                            ②ホバーしたときにイラストが背景から広がって出てくるアニメーション
+                        </h2>
+
+                    <p>
+                            次はホバーしたときに背景から画像が広がって出てくるアニメーションを実装したいと思います。背景画像が広がって出てくるアニメーションと、広がって出てきて、ホバーしている間は拡大縮小を繰り返し、ふわふわしているように見せるアニメーションを試してみました。
+                        </p>
+                    <p>実装してみるとこんな感じになります。</p>
+                    <div class="card_box2">
+                        <div class="comeout_img3">
+                            <div class="hover_card3">
+                                <a href="">背景から画像が広がって出てくる</a>
+                            </div>
+                        </div>
+                        <div class="comeout_img_airy">
+                            <div class="hover_card3">
+                                <a href="">背景から画像が広がってふわふわする</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>完成形はこちらです。</p>
+                    <div class="codepen">
+                        <iframe scrolling="no" title="Untitled" src="https://codepen.io/pnoozdnb-the-vuer/embed/preview/XJWWddG?default-tab=html%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen
+                            <a href="https://codepen.io/pnoozdnb-the-vuer/pen/XJWWddG">
+                                Untitled</a>
+                            by kinako (<a href="https://codepen.io/pnoozdnb-the-vuer">@pnoozdnb-the-vuer</a>) on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                    <h4>
+                            マウスがホバーしたときに背景から画像が広がって出てくるアニメーションの動き
+                        </h4>
+                    <p>
+                            マウスがホバーしていないときは背景画像を縮小してhover_cardの後ろに隠し、マウスがホバーしたときに中央から大きく広がって表示されるような動きを設定しています。
+                        </p>
+                    <p>もう一つのふわふわするアニメーションは、infinite(インフィニット)でふわふわする動作を無限ループさせ、alternate(オルタネート)で1回のアニメーションが終わった後に次のループが逆方向で再生するように設定しています。</p>
+                    <p>最初の動きでは0%から100%の順で再生し、次は100%から0%の順番で再生されています。</p>
+                    <h3>
+                            ホバーしたときに背景画像が回転しながら広がって出てくるアニメーション
+                        </h3>
+                    <p>
+                            上記のコードのtransformにrotateを足すと、回転しながら画像が広がります。
+                        </p>
+                    <div class="card_box2">
+                        <div class="comeout_img4">
+                            <div class="hover_card3">
+                                <a href="">背景から画像が回転して広がって出てくる</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p>完成形はこちらです。</p>
+                    <div class="codepen">
+                        <iframe height="300" style="width: 100%" scrolling="no" title="Untitled" src="https://codepen.io/pnoozdnb-the-vuer/embed/preview/zxYYqaO?default-tab=html%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen
+                            <a href="https://codepen.io/pnoozdnb-the-vuer/pen/zxYYqaO">
+                                Untitled</a>
+                            by kinako (<a href="https://codepen.io/pnoozdnb-the-vuer">@pnoozdnb-the-vuer</a>) on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                </section>
+                <section class="conclusion" id="conclusion">
+                    <h2>③まとめ</h2>
+                    <p>
+                            今回はポートフォリオに実装したホバーアニメーションを分析しました。アニメーションを実装していく中で、上手く背景が表示されなかったりしたので、何回もコードを書き直したりして納得がいくまでやり直しました。今回はCSSのみで実装したのですが、今後はJavaScriptを使用したアニメーションにも挑戦して見ようと思っています。
+                        </p>
+                </section>
+            </div>
+        </main>
+        <!-- /main -->
+        <footer class="footer">
+            <div class="footer_inner">
+                <div class="copyright">
+                    <small>Ⓒ2025 Tomomi Otani </small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- javascript -->
+    <script src="./asset/js/blog.js"></script>
+</body>
+</html>

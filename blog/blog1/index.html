@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ローディングアニメーションの実装方法</title>
+
+    <link rel="stylesheet" href="./asset/css/destyle.css" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="./asset/css/common.css" />
+    <!-- 共通 -->
+    <link rel="stylesheet" href="./asset/css/blog.css" />
+    <!-- 専用CSS -->
+
+    <!-- javascript -->
+    <script src="./asset/js/jquery-3.7.1.min.js"></script>
+
+    <!-- ファビコン -->
+    <link rel="icon" href="./asset/img/favicon.ico" />
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Chango&family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrap">
+        <!-- ローディングアニメーション -->
+        <div id="splash">
+            <div id="splash_logo" class="load">
+                <img src="./asset/img/load1.png" alt="" class="load1" />
+                <img src="./asset/img/load2.png" alt="" class="load2" />
+                <img src="./asset/img/load3.png" alt="" class="load3" />
+                <img src="./asset/img/load4.png" alt="" class="load4" />
+            </div>
+        </div>
+
+        <div class="bg__img"></div>
+        <div class="bg__img2"></div>
+
+        <!-- 背景のドーナツ画像 -->
+        <header class="header" id="header">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <a href="#"><img src="./asset/img/icon.png" alt="猫とドーナツのイラスト" /></a>
+                </div>
+                <nav class="g-nav">
+                    <ul>
+                        <li class="link-text" id="link-text">Link</li>
+                        <li class="nav-item"><a href="../../index.html">Home</a></li>
+                        <li class="nav-item"><a href="../../works.html">Works</a></li>
+                        <li class="nav-item"><a href="../../about.html">Profile</a></li>
+                        <li class="nav-item"><a href="../../blog.html">Blog</a></li>
+                        <li class="nav-item"><a href="../../index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="#"><button class="g-nav_btn" id="g-nav_btn"></button></a>
+            </div>
+        </header>
+        <!--/header -->
+        <div class="kv break">
+            <h1 class="title">
+                    サイトにローディングアニメーションを<wbr />実装する方法！
+                </h1>
+        </div>
+        <!-- /kv -->
+        <main class="main">
+            <div class="inner">
+                <section class="introduction_container">
+                    <div class="introduction_text">
+                        <h2>テーマと背景</h2>
+                        <p>
+                                今回はWebサイトを開いた時に表示される、ローディングアニメーションを実装する方法を3つ発表していきたいと思います。
+                            </p>
+                        <p>
+                                自分のportfolioに取り入れたいと思い、いろいろな方法で試してみました。静止画像を使用したローディングアニメーション、アニメーション画像を使用したローディングアニメーションを例として挙げるのですが、javascriptを使用しているものもあり、まだまだ勉強中なので深く理解できていないコードもあるのですが、暖かく見守っていただけると幸いです。
+                            </p>
+                    </div>
+                    <div class="toc">
+                        <p class="toc_title">目次</p>
+                        <ol>
+                            <li>
+                                <a href="#blog_container">
+                                    ①静止画像とjavascriptを使用して実装する方法
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#blog_container2">
+                                    ②アニメーション画像を使用してCSSのみで実装する方法1</a>
+                            </li>
+                            <li>
+                                <a href="#blog_container3">
+                                    ③アニメーション画像を使用してCSSのみで実装する方法2</a>
+                            </li>
+                            <li><a href="#conclusion">④まとめ</a></li>
+                        </ol>
+                    </div>
+                </section>
+                <section class="blog_container" id="blog_container">
+                    <h2>①静止画像を使用してjavascriptで実装する方法</h2>
+                    <p>
+                            まずは静止画像を使用してjavascriptで実装していきたいと思います。
+                        </p>
+                    <p>下記の4枚の画像を使用しています。</p>
+                    <ul>
+                        <li>
+                            <p>load1</p>
+                            <img src="./asset/img/load1.png" alt="" />
+                        </li>
+                        <li>
+                            <p>load2</p>
+                            <img src="./asset/img/load2.png" alt="" />
+                        </li>
+                        <li>
+                            <p>load3</p>
+                            <img src="./asset/img/load3.png" alt="" />
+                        </li>
+                        <li>
+                            <p>load4</p>
+                            <img src="./asset/img/load4.png" alt="" />
+                        </li>
+                    </ul>
+                    <p>完成形はこちらです。</p>
+                    <div class="codepen">
+                        <iframe scrolling="no" title="静止画を使用したローディングアニメーション" src="https://codepen.io/pnoozdnb-the-vuer/embed/preview/XJrErNZ?default-tab=html%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen
+                            <a href="https://codepen.io/pnoozdnb-the-vuer/pen/XJrErNZ">
+                                静止画を使用したローディングアニメーション</a>
+                            by kinako (<a href="https://codepen.io/pnoozdnb-the-vuer">@pnoozdnb-the-vuer</a>) on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                    <p>
+                            下のボタンを押せば実際にサイトに実装したものが見えます。
+                        </p>
+                    <div class="blog__btn">
+                        <a class="blog__btn2" href="./blog1.html">TAP!</a>
+                    </div>
+                    <p>
+                            HTMLに画像4枚を読み込ませ、画像の動きをCSSで指定し、jQueryを使用してページが完全に読み込まれた後に特定の要素をフェードアウトさせる処理を行っています。
+                        </p>
+                    <h3>CSSで指定したアニメーションの動きの流れ</h3>
+                    <ol>
+                        <li>
+                            1、開始（0%）: 不透明度が
+                            1なので指定した画像が表示される。
+                        </li>
+                        <li>
+                            2、24%: 不透明度はそのまま 1
+                            なので、画像が表示され続ける。
+                        </li>
+                        <li>
+                            3、25%: 不透明度が 0
+                            に変わったので、画像が消え、他の画像が表示される。
+                        </li>
+                        <li>
+                            4、99%:
+                            不透明度は変わらず0なので、他の画像が表示されたままになる。
+                        </li>
+                        <li>
+                            5、終了（100%）: 不透明度が再び 1
+                            に戻ったので、画像が再表示される。
+                        </li>
+                    </ol>
+                    <p>
+                            infiniteを指定しているのでアニメーションが1秒間で1サイクル実行され、無限に繰り返されます。
+                        </p>
+                    <h3>javascriptで指定したアニメーションの流れ</h3>
+                    <ol>
+                        <li>
+                            1、ページ読み込みが終わり、1.5秒経った後#splash
+                            要素（ローディング画面）がフェードアウトを開始する。
+                        </li>
+                        <li>
+                            2、ページ読み込みが終わり、1.5秒経った後#splash_logo
+                            要素（ローディング中表示されるイラスト）がフェードアウトを開始する。
+                        </li>
+                    </ol>
+                    <p>
+                            今はfadeOut("slow")で設定しているのでフェードアウトする時ゆっくりめにアニメーションが消えていくのですが、()の中を"fast"、"normal"などの文字列も指定するか、数字を入れたら画面の消え方が変わります。
+                        </p>
+                </section>
+                <section class="blog_container2" id="blog_container2">
+                    <h2>
+                            ②アニメーション画像を使用してCSSのみで実装する方法1
+                        </h2>
+                    <p>
+                            次は、javascriptを使用せずCSSのみでローディングアニメーションを実装していきたいと思います。
+                        </p>
+                    <p>下記のアニメーション画像を使用しています。</p>
+                    <img src="./asset/img/animation.webp" alt="" />
+                    <p>完成形はこちらです。</p>
+                    <div class="codepen">
+                        <iframe scrolling="no" title="Webp,GIFを使用したローディングアニメーション1" src="https://codepen.io/pnoozdnb-the-vuer/embed/preview/EaYEYGO?default-tab=html%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen
+                            <a href="https://codepen.io/pnoozdnb-the-vuer/pen/EaYEYGO">
+                                Webp,GIFを使用したローディングアニメーション1</a>
+                            by kinako (<a href="https://codepen.io/pnoozdnb-the-vuer">@pnoozdnb-the-vuer</a>) on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                    <p>
+                            下のボタンを押せば実際にサイトに実装したものが見えます。
+                        </p>
+                    <div class="blog__btn">
+                        <a class="blog__btn2" href="./blog2.html">TAP!</a>
+                    </div>
+                    <p>
+                            HTMLにアニメーション画像を読み込ませ、画像の動きをCSSのみで指定しています。
+                        </p>
+                    <h3>CSSで指定したアニメーションの動きの流れ</h3>
+                    <ol>
+                        <li>
+                            1、アニメーション画像を表示し、三秒後にフェードアウトのアニメーションが始まる。
+                        </li>
+                        <li>
+                            2、フェードアウトは0秒に設定しているので即座に画像の幅と高さが0になり見えなくなる。
+                        </li>
+                        <li>
+                            3、フェードアウトした後画像はそのまま見えなくなった状態を保持する（forwards
+                            によって最終状態が保持される）。
+                        </li>
+                    </ol>
+                    <p>
+                            上記のように要素が時間で消えるようなフェードアウトの効果を作ることができ、消えるまでの時間は3sの値を増やせば長い時間表示され、減らせば時間が短縮されます。ただ、JavaScriptを使わずにCSSで秒数を指定して実装するのでサイトの読み込みと関係なくローディングアニメーションが消えてしまう可能性があります。
+                        </p>
+                </section>
+                <section class="blog_container3" id="blog_container3">
+                    <h2>
+                            ③アニメーション画像を使用してCSSのみで実装する方法2
+                        </h2>
+                    <p>
+                            ②のやり方ではローディングアニメーションがぱっと消えてしまうので別の方法も試してみました。
+                        </p>
+                    <span>※アニメーション画像は②と同じものを使用しています。
+                    </span>
+                    <p>完成形がこちらです。</p>
+                    <div class="codepen">
+                        <iframe height="300" style="width: 100%" scrolling="no" title="Webp,GIFを使用したローディングアニメーション2" src="https://codepen.io/pnoozdnb-the-vuer/embed/preview/bNbvVYL?default-tab=html%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen
+                            <a href="https://codepen.io/pnoozdnb-the-vuer/pen/bNbvVYL">
+                                Webp,GIFを使用したローディングアニメーション2</a>
+                            by kinako (<a href="https://codepen.io/pnoozdnb-the-vuer">@pnoozdnb-the-vuer</a>) on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                    <p>
+                            下のボタンを押せば実際にサイトに実装したものが見えます。
+                        </p>
+                    <div class="blog__btn">
+                        <a class="blog__btn2" href="./blog3.html">TAP!</a>
+                    </div>
+                    <p>
+                            これも②と同じでHTMLにアニメーション画像を読み込ませ、画像の動きをCSSのみで指定していますが、指定したアニメーションが違います。
+                        </p>
+                    <h3>CSSで指定したアニメーションの動きの流れ</h3>
+                    <ol>
+                        <li>
+                            1、画像が表示されて3秒後にfadeOutアニメーションを開始させ、opacity
+                            が1から0に変化し、画像は徐々に透明になっていく。
+                        </li>
+                        <li>
+                            2、fadeOutアニメーション終了後、画像は透明なまま残り、画面上に表示はされないが存在は画面上に残っている状態になる。
+                        </li>
+                    </ol>
+                    <p>
+                            これでアニメーション画像が時間をかけて消える動きを作ることができますが、画面に表示されないだけで要素自体は画面上に残っている状態になってしまいます。今回のコードではz-indexで一番上にローディングアニメーションを持ってきているので、a要素がクリックできなってしまうという大きなデメリットがあります。コードを変えればクリック出来るようになるのかなと思いましたが、そこまで研究出来ていないです。こちらもJavaScriptを使わずにCSSで秒数を指定して実装するのでサイトの読み込みと関係なくローディングアニメーションが消えてしまう可能性があります。
+                        </p>
+                </section>
+                <section class="conclusion" id="conclusion">
+                    <h2>④まとめ</h2>
+                    <p>
+                            今回のサイトに使用したのは①の静止画像とjavascriptを使用した方法です。知り合いのportfolioを参考にしてコードを考えたりしたのですが、まだ学習していないjQueryを使用していたりでコードを理解するのに時間がかかりました。分からないコードがあればGoogleで意味を調べたりしてどういう動きをしてくれるものなのか、コメントアウトで後から見ても理解しやすいようにしています。
+                        </p>
+                    <p>
+                            今回挙げたのは3つの方法ですが、他の実装方法がまだあると思うので今後も色々なコードを身に着けていきたいです。
+                        </p>
+                </section>
+            </div>
+        </main>
+        <!-- /main -->
+        <footer class="footer">
+            <div class="footer_inner">
+                <div class="copyright">
+                    <small>Ⓒ2025 Tomomi Otani </small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- javascript -->
+    <script src="./asset/js/blog.js"></script>
+</body>
+</html>

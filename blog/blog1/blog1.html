@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ローディングアニメーションの実装方法</title>
+
+    <link rel="stylesheet" href="./asset/css/destyle.css" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="./asset/css/common.css" />
+    <!-- 共通 -->
+    <link rel="stylesheet" href="./asset/css/blog1.css" />
+    <!-- 専用CSS -->
+
+    <!-- javascript -->
+    <script src="./asset/js/jquery-3.7.1.min.js"></script>
+
+    <!-- ファビコン -->
+    <link rel="icon" href="./asset/img/favicon.ico" />
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Chango&family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrap">
+        <div id="splash">
+            <div id="splash_logo" class="load">
+                <img src="./asset/img/load1.png" alt="" class="load1" />
+                <img src="./asset/img/load2.png" alt="" class="load2" />
+                <img src="./asset/img/load3.png" alt="" class="load3" />
+                <img src="./asset/img/load4.png" alt="" class="load4" />
+            </div>
+        </div>
+        <header class="header" id="header">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <a href="#"><img src="./asset/img/icon.png" alt="猫とドーナツのイラスト" /></a>
+                </div>
+                <nav class="g-nav">
+                    <ul>
+                        <li>
+                            <a href="./blog.html">戻る</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#"><button class="g-nav__btn" id="g-nav__btn"></button></a>
+            </div>
+        </header>
+        <div class="text">ここにサイトの内容</div>
+    </div>
+    <footer class="footer">
+        <div class="footer_inner">
+            <div class="copyright">
+                <small>Ⓒ2025 Tomomi Otani </small>
+            </div>
+        </div>
+    </footer>
+    <script src="./asset/js/blog1.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+/* ヘッダー部分 */
+
+/* kv部分 */
+.kv {
+    padding-top: 500px;
+    position: relative;
+}
+.title {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vw;
+    line-height: 2em;
+    font-weight: 600;
+    color: var(--titile-color);
+    text-shadow: 1.5px 1.5px 3px #472a20;
+}
+.break {
+    word-break: keep-all;
+}
+
+/* main設定 */
+.main {
+    padding: 10px;
+}
+
+.inner {
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: var(--main-color);
+    padding: 30px 20px;
+    line-height: 1.8em;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 16px;
+}
+.inner ul,
+.inner ol {
+    padding-bottom: 20px;
+}
+
+.blog_container ul li {
+    display: inline-block;
+}
+
+/* 画面幅が大きくなった時のmain設定 */
+@media (940px < width) {
+    .main {
+        padding: 30px 160px;
+    }
+}
+
+/* ブログコンテナの設定 */
+.introduction_container,
+.blog_container,
+.blog_container2,
+.blog_container3,
+.conclusion {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 7px;
+}
+.blog_container,
+.blog_container2,
+.blog_container3,
+.conclusion {
+    margin-top: 20px;
+}
+
+/* 目次の設定 */
+.toc {
+    padding: 5px;
+    margin: 10px 3px;
+    background-color: var(--main-color);
+    border: 1px solid #6f6f6f;
+    border-radius: 20px;
+}
+.toc li a:hover {
+    opacity: 0.6;
+    border-bottom: #000 1px solid;
+}
+.toc_title {
+    font-size: 3vw;
+    text-align: center;
+    font-weight: 600;
+}
+.toc ol {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* 画面幅が大きくなったときのブログコンテナ*/
+@media (940px < width) {
+    .introduction_container,
+    .blog_container,
+    .blog_container2,
+    .blog_container3,
+    .conclusion {
+        padding-top: 25px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 35px;
+    }
+}
+
+/* インナーのフォント設定 */
+.inner h2,
+.inner h3 {
+    text-align: center;
+}
+.inner h2 {
+    margin-bottom: 15px;
+    font-size: 3.8vw;
+    font-weight: 600;
+}
+.inner h3 {
+    font-size: 3.5vw;
+    margin: 2.5rem 0;
+}
+/* mainのサイトに飛ぶボタン設定 */
+.blog__btn2 {
+    font-size: 3.5vw;
+    background-color: var(--bg-color);
+    padding: 2px 15px;
+    border-radius: 15px;
+    border: 2px solid var(--bg-color);
+    margin-left: 10px;
+}
+.blog__btn2:hover {
+    opacity: 0.8;
+    background-color: #fad2e3;
+}
+.blog__btn {
+    margin: 10px 0;
+}
+
+/* mainの中の画像、コードペン設定 */
+.blog_container li img,
+.blog_container2 img {
+    width: 180px;
+}
+iframe {
+    width: 100%;
+    height: 300px;
+    margin: 7px 5px;
+}
+
+/* コンテナ1の設定 */
+.blog_container ul {
+    text-align: center;
+}
+.blog_container ul li {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 2px;
+}
+.blog_container li p {
+    text-align: center;
+}
+
+/* 画面幅が大きくなったときのインナー中の要素設定 */
+@media (940px < width) {
+    .inner h2 {
+        font-size: 2.5vw;
+        margin-bottom: 30px;
+    }
+    .blog__btn2 {
+        font-size: 20px;
+    }
+    .inner h3 {
+        font-size: 2.2vw;
+    }
+    .inner li {
+        line-height: 1.8em;
+    }
+    .toc_title {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+/* コンテナ①の設定 */
+@media (1000px < width) {
+    .blog_container ul {
+        display: flex;
+        justify-content: space-around;
+    }
+}

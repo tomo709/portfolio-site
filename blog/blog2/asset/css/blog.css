@@ -1,0 +1,424 @@
+@charset "utf-8";
+
+/* ヘッダー部分 */
+
+/* kv部分 */
+.kv {
+    padding-top: 500px;
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vw;
+    line-height: 2em;
+    font-weight: 600;
+    color: var(--titile-color);
+    text-shadow: 1.5px 1.5px 3px #472a20;
+}
+
+.break {
+    word-break: keep-all;
+}
+
+/* main設定 */
+.main {
+    padding: 10px;
+}
+
+.inner {
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: var(--main-color);
+    padding: 30px 20px;
+    line-height: 1.8em;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 16px;
+}
+
+.inner ul,
+.inner ol {
+    padding-bottom: 20px;
+}
+
+.blog_container ul li {
+    display: inline-block;
+}
+
+/* 画面幅が大きくなった時のmain設定 */
+@media (940px < width) {
+    .main {
+        padding: 30px 160px;
+    }
+}
+
+/* ブログコンテナの設定 */
+.introduction_container,
+.blog_container,
+.blog_container2,
+.conclusion {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 7px;
+}
+
+.blog_container,
+.blog_container2,
+.conclusion {
+    margin-top: 20px;
+}
+
+/* 目次の設定 */
+.toc {
+    padding: 5px;
+    margin: 10px 3px;
+    background-color: var(--main-color);
+    border: 1px solid #6f6f6f;
+    border-radius: 20px;
+}
+
+.toc li a:hover {
+    opacity: 0.6;
+    border-bottom: #000 1px solid;
+}
+
+.toc_title {
+    font-size: 3vw;
+    text-align: center;
+    font-weight: 600;
+}
+
+.toc ol {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* 画面幅が大きくなったときのブログコンテナ*/
+@media (940px < width) {
+
+    .introduction_container,
+    .blog_container,
+    .blog_container2,
+    .conclusion {
+        padding-top: 25px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 35px;
+    }
+}
+
+/* インナーのフォント設定 */
+.inner h2,
+.inner h3,
+.inner h4 {
+    text-align: center;
+}
+
+.inner h2 {
+    margin-bottom: 15px;
+    font-size: 4vw;
+    font-weight: 600;
+    line-height: 1.5em;
+}
+
+.inner h3 {
+    font-size: 3.8vw;
+    font-weight: 600;
+    margin: 2.5rem 0;
+}
+
+.inner h4 {
+    font-size: 3vw;
+    font-weight: 600;
+    margin: 2.5rem 0;
+}
+
+/* mainの中の画像、コードペン設定 */
+.blog_container li img,
+.blog_container2 img {
+    width: 180px;
+}
+
+iframe {
+    width: 100%;
+    height: 350px;
+    margin: 7px 5px;
+}
+
+/* ホバーアニメーションブログの設定 */
+/* コンテナ1の設定 */
+.card_box {
+    margin: 30px auto;
+}
+
+.hover_card,
+.hover_card2 {
+    margin: 20px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 1px 3px 10px 1px #adadad;
+    border: 1px hotpink solid;
+    transition: 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.hover_card:hover,
+.hover_card2:hover {
+    transform: scale(1.1);
+}
+
+/* ホバーしたときにに背景から画像が出てくる */
+.comeout_img,
+.comeout_img2 {
+    position: relative;
+    width: fit-content;
+    /*   要素の幅を中身に合わせる */
+}
+
+/* 上から画像が出てくる設定 */
+.comeout_img::before {
+    content: "";
+    position: absolute;
+    left: 20%;
+    width: 50%;
+    height: 100px;
+    background-image: url("../img/haikeineko.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateY(0);
+    /* 初期位置 */
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    will-change: transform, opacity;
+    z-index: 1;
+    /* カードより背面に配置 */
+    pointer-events: none;
+    /* マウスイベントを無効化 */
+}
+
+.comeout_img:hover::before {
+    opacity: 1;
+    /* ホバー時に画像を表示 */
+    transform: translateY(-80%);
+    /* 画像が上にスライドして現れる */
+}
+
+/* 横から画像が出てくる設定 */
+.comeout_img2::before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 20%;
+    width: 50%;
+    height: 100px;
+    background-image: url("../img/haikeineko.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateX(0);
+    /* 初期位置 */
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    will-change: transform, opacity;
+    z-index: 1;
+    /* カードより背面に配置 */
+    pointer-events: none;
+    /* マウスイベントを無効化 */
+}
+
+.comeout_img2:hover::before {
+    opacity: 1;
+    /* ホバー時に画像を表示 */
+    transform: translateX(150%);
+    /* 画像が右にスライドして現れる */
+}
+
+/* 画面が大きくなった時のコンテナ1の設定 */
+@media (700px < width) {
+    .card_box {
+        margin-top: 80px;
+        display: flex;
+        gap: 5em;
+    }
+}
+
+/* コンテナ２の画像が広がって出てくる設定 */
+
+
+/* 画面が大きくなった時の設定 */
+@media (700px < width) {
+    .card_box2 {
+        display: flex;
+        gap: 100px;
+        margin: 40px;
+    }
+}
+
+.hover_card3 {
+    width: 150px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 1px 3px 10px 1px #adadad;
+    border: 1px hotpink solid;
+    transition: 0.7s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.hover_card3:hover {
+    transform: scale(1.1);
+}
+
+.comeout_img3,
+.comeout_img_airy {
+    position: relative;
+    width: fit-content;
+    /*   要素の幅を中身に合わせる */
+}
+
+/* 背景から画像が出てくる設定 */
+.comeout_img3::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: url("../img/ribbon.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%) scale(0);
+    /* 中央に配置し、要素を縮小して隠す */
+    transition: 0.7s ease-in-out;
+    z-index: 1;
+    /* カードより背面に配置 */
+    pointer-events: none;
+    /* マウスイベントを無効化 */
+}
+
+.comeout_img3:hover::before {
+    width: 170%;
+    height: 170%;
+    transform: translate(-50%, -50%) scale(1);
+    /* 要素の中央を基準に配置し、元のサイズに戻す */
+}
+
+/* 背景画像がふわふわ出てくる設定 */
+.comeout_img_airy::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: url("../img/ribbon.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%) scale(0);
+    /* 中央に配置して、背景画像のサイズを小さくして隠す */
+    animation: airy 1.5s infinite ease-in-out alternate;
+    animation-play-state: paused;
+    /*   ホバーしていないときは停止 */
+    z-index: 1;
+    /* カードより背面に配置 */
+    pointer-events: none;
+    /* マウスイベントを無効化 */
+}
+
+.comeout_img_airy:hover::before {
+    width: 180%;
+    height: 180%;
+    transform: translate(-50%, -50%) scale(0.7);
+    animation-play-state: running;
+    /* ホバー時にアニメーションを再生 */
+}
+
+@keyframes airy {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+/* 背景画像が回転しながら出てくる設定 */
+.comeout_img4 {
+    position: relative;
+    width: fit-content;
+    /* 要素の幅を中身に合わせる */
+}
+
+.comeout_img4::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: url(../img/ribbon.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    /* 中央に配置し、要素を縮小して隠す */
+    transition: 1s ease-out;
+    pointer-events: none;
+    /* マウスイベントを無効化 */
+}
+
+.comeout_img4:hover::before {
+    width: 180%;
+    height: 180%;
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    /* 要素の中央を基準に配置し、元のサイズに戻す */
+    /* 背景画像を表示 */
+}
+
+
+/* 画面幅が大きくなったときのインナー中の要素設定 */
+@media (940px < width) {
+    .inner h2 {
+        font-size: 2.5vw;
+        margin-bottom: 30px;
+    }
+
+    .inner h3 {
+        font-size: 1.8vw;
+    }
+
+    .inner h4 {
+        font-size: 1.5vw;
+
+    }
+
+    .toc_title {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* 背景画像のずれ調整 */
+@media (800px < width) {
+
+    .bg__img,
+    .bg__img2 {
+        width: 40%;
+    }
+
+    .bg__img {
+        top: 50px;
+    }
+
+    .bg__img2 {
+        top: 700px;
+    }
+}
