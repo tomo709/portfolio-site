@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>実績詳細</title>
+    <link rel="stylesheet" href="./asset/css/destyle.css" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="./asset/css/common.css" />
+    <!-- 共通 -->
+    <link rel="stylesheet" href="./asset/css/worksprogram.css" />
+    <!-- 専用CSS -->
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- ファビコン -->
+    <link rel="icon" href="./asset/img/favicon.png" />
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Chango&family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css" />
+</head>
+<body>
+    <div class="wrap">
+        <!-- topに戻るボタン -->
+        <div class="page_top"><a href="#"></a></div>
+        <!-- ローディングアニメーション -->
+        <div id="splash">
+            <div id="splash_logo" class="load">
+                <img src="./asset/img/load1.png" alt="ドーナツが3つ並んで1つ目が跳ねているイラスト" class="load1" />
+                <img src="./asset/img/load2.png" alt="ドーナツが3つ並んで2つ目が跳ねているイラスト" class="load2" />
+                <img src="./asset/img/load3.png" alt="ドーナツが3つ並んで3つ目が跳ねているイラスト" class="load3" />
+                <img src="./asset/img/load4.png" alt="ドーナツが3つ並んでいるイラスト" class="load4" />
+            </div>
+        </div>
+
+        <div class="bg__img"></div>
+        <div class="bg__img2"></div>
+        <!-- 背景のドーナツ画像 -->
+
+        <header class="header" id="header">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <a href="#"><img src="./asset/img/icon.png" alt="猫とドーナツのイラスト" /></a>
+                </div>
+
+                <nav class="g-nav">
+                    <ul>
+                        <li class="link-text" id="link-text">Link</li>
+                        <li class="nav-item">
+                            <a href="./index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="./works.html">Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./about.html">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="g-nav_btn" id="g-nav_btn"></button>
+            </div>
+        </header>
+        <!--/header -->
+        <main class="main">
+            <div class="inner">
+                <div class="title">Works</div>
+                <div class="works_box">
+                    <div class="works_top">
+                        <div class="works_top_text">
+                            <h1>todoリスト</h1>
+                            <p>自主制作</p>
+                            <p>プログラム</p>
+                            <p>
+                                    <a href="./projects/todolist/index.html">URL：todoリストのサイト</a>
+                                </p>
+                        </div>
+                        <div class="works_top_img fadeIn repeat-action">
+                            <img src="./asset/img/todolist.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="works_overview">
+                        <ul>
+                            <li>
+                                <div class="work_top_list">概要</div>
+                                <p>
+                                        選んだ動物と一緒にタスク管理ができるTodoリスト。授業で作成した、タスク、日付を入力して追加を押すとやることリストのエリアに追加されるだけだった簡素なTodoリストに、好きな動物（ねこ・うさぎ・シマエナガ）の中から選ぶとイラストが変わる、タスクを追加・完了・削除すると、選んだ動物の画像が押したボタンによって変化する、完了したタスクを入れておくli要素を作成、などの要素を追加し、タスクをこなすたびに動物が褒めてくれる楽しいTodoを作成しました。
+                                    </p>
+                            </li>
+                            <li>
+                                <div class="work_top_list">目的</div>
+                                <p>
+                                        自身のスキルを磨くためにJavaScriptの練習として作成しました。タスクの追加・削除・完了機能の実装や、ボタンクリックでの処理、追加したタスクの状態によってイラストを切り替える操作などを練習し、JavaScriptへの理解を深めました。</p>
+                            </li>
+
+                            <li>
+                                <div class="work_top_list">プログラムの流れ</div>
+                                <ol>
+                                    <li>
+                                        <strong>１，好きな動物を選択</strong>
+                                        <p>promptで1,2,3（ねこ、うさぎ、シマエナガ）の数字を入力し、選択された動物の画像を＃comp_imgに設定。</p>
+                                    </li>
+                                    <li>
+                                        <strong>２，タスクの追加</strong>
+                                        <p>＃todoInputに入力されたタスクと日付を ＃todoList に追加。</p>
+                                    </li>
+                                    <li>
+                                        <strong>３，タスクの完了</strong>
+                                        <p>完了ボタンをクリックすると#completed（完了！エリア） に移動し、動物の画像が変化する。</p>
+                                    </li>
+                                    <li>
+                                        <strong>４，タスクの削除
+                                        </strong>
+                                        <p>削除ボタンをクリックするとli要素が削除され、動物の画像が最初の状態に戻る。</p>
+                                    </li>
+                                </ol>
+
+                            </li>
+                            <li>
+
+                                <p class="color_information">配色</p>
+                                <div class="color_img fadeIn repeat-action">
+                                    <img src="./asset/img/todolistcolor.png" alt="" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work_top_list">制作期間</div>
+                                <p>3日（デザイン素材作成1日、コーディング2日）</p>
+                            </li>
+                            <li>
+                                <div class="work_top_list">使用ツール</div>
+                                <p>Visual Studio Code/ibisPaint</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="works_page_btn">
+                    <a href="./works.html">制作実績一覧へ</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer_inner">
+                <div class="copyright">
+                    <small>Ⓒ2025 Tomomi Otani </small>
+                </div>
+            </div>
+        </footer>
+        <!-- /footer -->
+    </div>
+    <!-- /wrap -->
+
+    <script src="./asset/js/jquery.inview.min.js"></script>
+    <script src="./asset/js/topbtn.js"></script>
+    <script src="./asset/js/top.js"></script>
+</body>
+</html>

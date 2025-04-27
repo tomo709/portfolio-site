@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="./asset/css/destyle.css" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="./asset/css/slick.css" />
+    <!-- themeCSSの方を後で読み込む -->
+    <!-- themeCSS -->
+    <link rel="stylesheet" href="./asset/css/slick-theme.css" />
+    <link rel="stylesheet" href="./asset/css/common.css" />
+    <!-- 共通 -->
+    <link rel="stylesheet" href="./asset/css/profile.css" />
+    <!-- 専用CSS -->
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- ファビコン -->
+    <link rel="icon" href="./asset/img/favicon.png" />
+
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Chango&family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrap">
+        <!-- ローディングアニメーション -->
+        <div id="splash">
+            <div id="splash_logo" class="load">
+                <img src="./asset/img/load1.png" alt="ドーナツが3つ並んで1つ目が跳ねているイラスト" class="load1" />
+                <img src="./asset/img/load2.png" alt="ドーナツが3つ並んで2つ目が跳ねているイラスト" class="load2" />
+                <img src="./asset/img/load3.png" alt="ドーナツが3つ並んで3つ目が跳ねているイラスト" class="load3" />
+                <img src="./asset/img/load4.png" alt="ドーナツが3つ並んでいるイラスト" class="load4" />
+            </div>
+        </div>
+
+        <div class="bg__img"></div>
+        <div class="bg__img2"></div>
+        <!-- 背景のドーナツ画像 -->
+        <header class="header" id="header">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <a href="#"><img src="./asset/img/icon.png" alt="猫とドーナツのイラスト" /></a>
+                </div>
+
+                <nav class="g-nav">
+                    <ul>
+                        <li class="link-text" id="link-text">Link</li>
+                        <li class="nav-item">
+                            <a href="./index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="./works.html">Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./about.html">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="g-nav_btn" id="g-nav_btn"></button>
+            </div>
+        </header>
+        <!--/header -->
+        <main class="main">
+            <div class="inner">
+                <section class="Profile fadeIn repeat-action">
+                    <div class="contents_title">
+                        <h1>Profile</h1>
+                        <p>~自己紹介~</p>
+                    </div>
+                    <div class="Profile_box">
+                        <div class="Profile_card">
+                            <div class="Profile_img"></div>
+                            <div class="Profile_text_card">
+                                <h3>大谷 友美</h3>
+                                <h4>Otani Tomomi</h4>
+                                <p>1997年7月生まれ。徳島県出身。</p>
+                                <p>
+                                        2024年11月からWebプログラマー養成科に通っております。常に新しいことにチャレンジする姿勢を持ちながら、現在はHTML、CSS、JavaScriptなどを使用してWebサイトの制作に取り組んでおります。Webサイト制作においては、誰が見ても分かりやすく、無駄のないコーディングを心掛けております。これまでに制作した作品は、制作物ページに掲載しておりますので、ぜひご覧いただければ幸いです。
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="Profile_btn">
+                            <a href="./works.html">...制作物一覧へ</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="skill fadeIn repeat-action">
+                    <div class="contents_title">
+                        <h2>Skill</h2>
+                        <p>~出来ること詳細~</p>
+                    </div>
+                    <div class="skill_card_box">
+                        <div class="skill_card">
+                            <div class="skill_icon">
+                                <img src="./asset/img/HTML.png" alt="HTMLのアイコン" />
+                            </div>
+                            <div class="skill_text">
+                                <h3>HTML</h3>
+                                <p>
+                                        HTML5タグを用いてWebページの構造を作成できます。わかりやすい構造を意識し、見やすく整理されたHTMLを書くことを心がけています。フォーム作成やリンク・画像の埋め込み、リスト・表の作成など、Webサイトに必要な要素を適切に配置する事ができます。CSS、JavaScriptとの連携を意識したコーディングも可能です。
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="skill_card">
+                            <div class="skill_icon">
+                                <img src="./asset/img/CSS.png" alt="CSSのアイコン" />
+                            </div>
+                            <div class="skill_text">
+                                <h3>CSS</h3>
+                                <p>
+                                        CSSを使ったデザイン調整ができます。レイアウト作成ではFlexboxやGridレイアウトを活用し、見やすく、見ている方に内容が伝わりやすいデザインにすることを心掛けています。余白や配置バランスの調整にも気を配り、画面サイズに応じたレスポンシブ対応を意識したスタイリングが可能です。ボタンやリンクにアニメーションやホバーエフェクトを加えることで、使いやすく楽しいデザインを意識したサイトを作成することができます。
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="skill_card">
+                            <div class="skill_icon">
+                                <img src="./asset/img/Js.png" alt="JavaScriptのアイコン" />
+                            </div>
+                            <div class="skill_text">
+                                <h3>JavaScript</h3>
+                                <p>
+                                        JavaScriptを使った動的な処理ができます。ボタンのクリックや入力フォームの動作など、ユーザー操作に応じたインタラクティブな機能の実装が可能です。また、DOM操作を用いてページ内の要素を変更したり、アニメーションを加えることで、より視覚的な効果を取り入れることが可能です。
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="skill_card">
+                            <div class="skill_icon">
+                                <img src="./asset/img/WordPress.png" alt="WordPressのアイコン" />
+                            </div>
+                            <div class="skill_text">
+                                <h3>WordPress</h3>
+                                <p>
+                                                        WordPressでは、オリジナルテーマの制作が可能です。テンプレート構成やループ処理の仕組みを理解しており、PHPを用いたカスタマイズにも対応できます。functions.phpを使った独自機能の追加や、カスタム投稿タイプ・カスタムフィールドの実装にも対応しており、柔軟なサイト設計が行えます。また、管理画面を考慮した設計や、プラグインとの連携による機能拡張も可能です。
+                                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="Like fadeIn repeat-action">
+                    <div class="contents_title">
+                        <h2>Like</h2>
+                        <p>~好きなもの・趣味~</p>
+                    </div>
+                    <div class="Like_card">
+                        <div class="Like_text">
+                            <p>
+                                    食べることが好きです！特にスイーツが好きで休日はカフェでゆったり過ごしたりしています。
+                                </p>
+                        </div>
+                        <h4>~Photo~</h4>
+                        <div class="carousel">
+                            <!-- スライドのリスト -->
+                            <div class="contains">
+                                <!-- スライドを選択するためのラジオボタンリスト。 -->
+                                <input class="slide_select" type="radio" id="SlideA" name="slide_check" checked />
+                                <input class="slide_select" type="radio" id="SlideB" name="slide_check" />
+                                <input class="slide_select" type="radio" id="SlideC" name="slide_check" />
+                                <input class="slide_select" type="radio" id="SlideD" name="slide_check" />
+                                <input class="slide_select" type="radio" id="SlideE" name="slide_check" />
+                                <input class="slide_select" type="radio" id="SlideF" name="slide_check" />
+                                <!-- スライド -->
+                                <div class="slide">
+                                    <!-- スライドを1個前と1個後ろにスクロールさせるボタン -->
+                                    <div class="scroll_controler">
+                                        <!-- 前へボタン forで戻る先のラジオボタンのidを書く-->
+                                        <label class="scroll_button scroll_prev" for="SlideF"></label>
+                                        <!-- 次へボタン forで進む先のラジオボタンのidを書く-->
+                                        <label class="scroll_button scroll_next" for="SlideB"></label>
+                                    </div>
+                                    <!-- スライドの画像 -->
+                                    <img src="./asset/img/food1.jpg">
+                                </div>
+                                <!-- スライド（2番目）-->
+                                <div class="slide">
+                                    <div class="controler_scroll">
+                                        <label class="scroll_button scroll_prev" for="SlideA"></label>
+                                        <label class="scroll_button scroll_next" for="SlideC"></label>
+                                    </div>
+                                    <img src="./asset/img/food2.jpg">
+                                </div>
+                                <!-- スライド（3番目） -->
+                                <div class="slide">
+                                    <div class="controler_scroll">
+                                        <label class="scroll_button scroll_prev" for="SlideB"></label>
+                                        <label class="scroll_button scroll_next" for="SlideD"></label>
+                                    </div>
+                                    <img src="./asset/img/food3.jpg">
+                                </div>
+                                <!-- スライド（4番目） -->
+                                <div class="slide">
+                                    <div class="controler_scroll">
+                                        <label class="scroll_button scroll_prev" for="SlideC"></label>
+                                        <label class="scroll_button scroll_next" for="SlideF"></label>
+                                    </div>
+                                    <img src="./asset/img/food4.jpg">
+                                </div>
+                                <!-- スライド（5番目） -->
+                                <div class="slide">
+                                    <div class="controler_scroll">
+                                        <label class="scroll_button scroll_prev" for="SlideD"></label>
+                                        <label class="scroll_button scroll_next" for="SlideF"></label>
+                                    </div>
+                                    <img src="./asset/img/food5.jpg">
+                                </div>
+                                <!-- スライド（6番目） -->
+                                <div class="slide">
+                                    <div class="controler_scroll">
+                                        <label class="scroll_button scroll_prev" for="SlideE"></label>
+                                        <label class="scroll_button scroll_next" for="SlideA"></label>
+                                    </div>
+                                    <img src="./asset/img/food6.jpg">
+                                </div>
+                                <!-- スライド移動用ボタン -->
+                                <div class="move_controler">
+                                    <label class="button_move" for="SlideA"></label>
+                                    <label class="button_move" for="SlideB"></label>
+                                    <label class="button_move" for="SlideC"></label>
+                                    <label class="button_move" for="SlideD"></label>
+                                    <label class="button_move" for="SlideE"></label>
+                                    <label class="button_move" for="SlideF"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="blog"></section>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer_inner">
+                <div class="copyright">
+                    <small>Ⓒ2025 Tomomi Otani </small>
+                </div>
+            </div>
+        </footer>
+        <!-- /footer -->
+    </div>
+    <script src="./asset/js/jquery.inview.min.js"></script>
+    <script src="./asset/js/top.js"></script>
+</body>
+</html>

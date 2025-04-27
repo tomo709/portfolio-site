@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog</title>
+    <link rel="stylesheet" href="./asset/css/destyle.css" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="./asset/css/common.css" />
+    <!-- 共通 -->
+    <link rel="stylesheet" href="./asset/css/works.css" />
+    <!-- 専用CSS -->
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- ファビコン -->
+    <link rel="icon" href="./asset/img/favicon.png" />
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Chango&family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrap">
+        <!-- ローディングアニメーション -->
+        <div id="splash">
+            <div id="splash_logo" class="load">
+                <img src="./asset/img/load1.png" alt="ドーナツが3つ並んで1つ目が跳ねているイラスト" class="load1" />
+                <img src="./asset/img/load2.png" alt="ドーナツが3つ並んで2つ目が跳ねているイラスト" class="load2" />
+                <img src="./asset/img/load3.png" alt="ドーナツが3つ並んで3つ目が跳ねているイラスト" class="load3" />
+                <img src="./asset/img/load4.png" alt="ドーナツが3つ並んでいるイラスト" class="load4" />
+            </div>
+        </div>
+
+        <div class="bg__img"></div>
+        <div class="bg__img2"></div>
+        <!-- 背景のドーナツ画像 -->
+
+        <header class="header" id="header">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <a href="#"><img src="./asset/img/icon.png" alt="猫とドーナツのイラスト" /></a>
+                </div>
+
+                <nav class="g-nav">
+                    <ul>
+                        <li class="link-text" id="link-text">Link</li>
+                        <li class="nav-item">
+                            <a href="./index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="./works.html">Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./about.html">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="top.html#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="g-nav_btn" id="g-nav_btn"></button>
+            </div>
+        </header>
+        <!--/header -->
+        <main class="main">
+            <div class="inner">
+                <section class="Works">
+                    <div class="contents_title">
+                        <h1>Blog</h1>
+                        <p>~身に着けた技術一覧~</p>
+                    </div>
+                    <div class="works_card_box fadeIn repeat-action">
+                        <div class="comeout_img">
+                            <div class="works_card">
+                                <a href="./blog/blog1/index.html">
+                                    <div class="works_img">
+                                        <img src="./asset/img/loadingAnimation.png" alt="ブログのキービジュアルの画像" />
+                                    </div>
+                                    <div class="work_title">
+                                        <div class="works_name">
+                                            ローディングアニメーションの実装方法！
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="comeout_img">
+                            <div class="works_card">
+                                <a href="./blog/blog2/index.html">
+                                    <div class="works_img">
+                                        <img src="./asset/img/hoverAnimation.png" alt="" />
+                                    </div>
+                                    <div class="work_title">
+                                        <div class="works_name">
+                                            ホバーアニメーションを実装する方法
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="contact fadeIn repeat-action" id="contact">
+                    <div class="contents_title">
+                        <h2>Contact</h2>
+                        <p>~問い合わせ~</p>
+                        <small class="contact_text">
+                            ご覧いただきありがとうございます。<br />
+                            ご質問などお気軽にご連絡ください
+                        </small>
+                    </div>
+                    <p><span class="require">*</span>は必須項目です。</p>
+                    <form action="#" method="post" class="form">
+                        <table class="entryTable">
+                            <tr>
+                                <th>氏名*</th>
+                                <td>
+                                    <input type="text" name="name" required />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>メールアドレス*</th>
+                                <td>
+                                    <input type="email" name="email" required />
+                                    <small>※半角で入力してください</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>電話番号</th>
+                                <td>
+                                    <input type="tel" name="tel" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>お問い合わせ内容*</th>
+                                <td>
+                                    <textarea name="textarea" id="textarea" rows="4" cols="30" required></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="contact_btn">
+                            <input type="submit" value="送信" />
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer_inner">
+                <div class="copyright">
+                    <small>Ⓒ2025 Tomomi Otani </small>
+                </div>
+            </div>
+        </footer>
+        <!-- /footer -->
+    </div>
+    <!-- /wrap -->
+
+    <script src="./asset/js/jquery.inview.min.js"></script>
+    <script src="./asset/js/top.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>実績詳細</title>
+    <link rel="stylesheet" href="./asset/css/destyle.css" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="./asset/css/common.css" />
+    <!-- 共通 -->
+    <link rel="stylesheet" href="./asset/css/worksprogram.css" />
+    <!-- 専用CSS -->
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- ファビコン -->
+    <link rel="icon" href="./asset/img/favicon.png" />
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Chango&family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css" />
+</head>
+<body>
+    <div class="wrap">
+        <!-- topに戻るボタン -->
+        <div class="page_top"><a href="#"></a></div>
+        <!-- ローディングアニメーション -->
+        <div id="splash">
+            <div id="splash_logo" class="load">
+                <img src="./asset/img/load1.png" alt="ドーナツが3つ並んで1つ目が跳ねているイラスト" class="load1" />
+                <img src="./asset/img/load2.png" alt="ドーナツが3つ並んで2つ目が跳ねているイラスト" class="load2" />
+                <img src="./asset/img/load3.png" alt="ドーナツが3つ並んで3つ目が跳ねているイラスト" class="load3" />
+                <img src="./asset/img/load4.png" alt="ドーナツが3つ並んでいるイラスト" class="load4" />
+            </div>
+        </div>
+
+        <div class="bg__img"></div>
+        <div class="bg__img2"></div>
+        <!-- 背景のドーナツ画像 -->
+
+        <header class="header" id="header">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <a href="#"><img src="./asset/img/icon.png" alt="猫とドーナツのイラスト" /></a>
+                </div>
+
+                <nav class="g-nav">
+                    <ul>
+                        <li class="link-text" id="link-text">Link</li>
+                        <li class="nav-item">
+                            <a href="./index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="./works.html">Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./about.html">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="g-nav_btn" id="g-nav_btn"></button>
+            </div>
+        </header>
+        <!--/header -->
+        <main class="main">
+            <div class="inner">
+                <div class="title">Works</div>
+                <div class="works_box">
+                    <div class="works_top">
+                        <div class="works_top_text">
+                            <h1>クッキー調理ゲーム</h1>
+                            <p>自主制作</p>
+                            <p>プログラム</p>
+                            <p>
+                                    <a href="../root/projects/cookieCooking/index.html">URL：クッキー調理ゲームサイト</a>
+                                </p>
+                        </div>
+                        <div class="works_top_img fadeIn repeat-action">
+                            <img src="./asset/img/cookieCooking.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="works_overview">
+                        <ul>
+                            <li>
+                                <div class="work_top_list">概要</div>
+                                <p>
+                                        クッキーに入れる材料を選択して好きなクッキーを作成する簡単なシミュレーションゲーム。「調理を始める」ボタンを押すと、質問が表示され、ユーザーが選択肢を選ぶことで、順番に処理が進みます。イラストはフリーのものを使用しています。
+                                    </p>
+                            </li>
+                            <li>
+                                <div class="work_top_list">目的</div>
+                                <p>
+                                        自身のスキルを磨くためにJavaScriptの練習として作成しました。if文の構成やクリックイベントなど基本的な動作を入れ込み、少しでも楽しんでもらえるよう完成形を4つ作成しました。今後選択肢を増やしたり完成形を増やしていく予定です。
+                                    </p>
+                            </li>
+
+                            <li>
+                                <div class="work_top_list">プログラムの流れ</div>
+                                <ol>
+                                    <li>
+                                        <strong>１，ゲーム開始</strong>
+                                        <p>調理開始ボタンをクリックするとansStart()が実行される。</p>
+                                        <p>調理開始ボタンを非表示にし、ansArea（質問エリア）を表示。</p>
+                                        <p>setQuestion("チョコチップを入れますか？", "入れる", "入れない", "cocoa", "plainCookie"); が実行され、最初の質問をセットされる。</p>
+                                    </li>
+                                    <li>
+                                        <strong>２，選択肢を選ぶ</strong>
+                                        <p>selection(next)が実行され次の質問、結果が決定する。</p>
+                                        <p>チョコチップを入れますか？に「入れる」を選択すると「ココアを入れますか？」の質問に進む。「入れない」を選択した場合プレーンクッキーが完成する。</p>
+                                        <p>「ココアを入れない」を選ぶと「抹茶パウダーを入れますか？」の質問に進む。</p>
+                                    </li>
+                                    <li>
+                                        <strong>３，クッキーの完成</strong>
+                                        <p>選択結果に応じて完成したクッキーが表示される。</p>
+                                        <p>displayResult(cookieType, message) が実行され、クッキーの種類と完成メッセージが表示される。</p>
+                                    </li>
+                                    <li>
+                                        <strong>４，ゲームをリセットして最初からプレイする</strong>
+                                        <p>もう一度調理するボタンをクリックすると resetGame() が実行され、最初からゲームが開始される。</p>
+                                    </li>
+                                </ol>
+
+                            </li>
+                            <li>
+
+                                <p class="color_information">配色</p>
+                                <div class="color_img fadeIn repeat-action">
+                                    <img src="./asset/img/cookieCookingcolor.png" alt="" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work_top_list">制作期間</div>
+                                <p>2日（デザイン素材探し半日、コーディング1日半）</p>
+                            </li>
+                            <li>
+                                <div class="work_top_list">使用ツール</div>
+                                <p>Visual Studio Code</p>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="works_page_btn">
+                    <a href="./works.html">制作実績一覧へ</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer_inner">
+                <div class="copyright">
+                    <small>Ⓒ2025 Tomomi Otani </small>
+                </div>
+            </div>
+        </footer>
+        <!-- /footer -->
+    </div>
+    <!-- /wrap -->
+
+    <script src="./asset/js/jquery.inview.min.js"></script>
+    <script src="./asset/js/topbtn.js"></script>
+    <script src="./asset/js/top.js"></script>
+</body>
+</html>
