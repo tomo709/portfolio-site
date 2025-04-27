@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todoアプリ</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/destyle.css">
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+        <h1>やることリスト</h1>
+        <div class="inputarea">
+            <input type="text" id="todoInput" placeholder="やることを書いてね" />
+            <input type="date" id="dateInput" />
+            <button id="addBtn">追加</button>
+        </div>
+        <div class="todoerea">
+            <h2>すること</h2>
+            <ul id="todoList"></ul>
+        </div>
+        <div class="comp_img" id="comp_img"></div>
+        <div class="comperea">
+            <h2>完了！</h2>
+            <ul id="completed"></ul>
+        </div>
+        <script src="./js/script.js"></script>
+    </div>
+</body>
+</html>

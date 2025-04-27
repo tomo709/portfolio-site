@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+/* 全体の設定 */
+body {
+    font-family: "Hachi Maru Pop", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #F4F8D3;
+
+}
+
+.wrap {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #f9a1b4;
+    text-shadow: 1px 2px 0px #f9a1b4;
+    position: relative;
+    padding: 1rem .5rem;
+}
+
+h1:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    content: '';
+    border-radius: 3px;
+    background-image: linear-gradient(to left, #febecb 0%, #A6F1E0 100%);
+
+}
+
+/* inputの設定 */
+input[type="text"],
+input[type="date"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 3px double #f9a1b4;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.inputarea {
+    display: flex;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #febecb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px #84646a;
+}
+
+button:hover {
+    background-color: #f9a1b4;
+}
+
+/* リストの設定 */
+.todoerea,
+.comperea {
+    margin-top: 15px;
+    width: 80%;
+    max-width: 600px;
+    min-height: 250px;
+    background-color: #A6F1E0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #69978c;
+    padding: 20px;
+    position: relative;
+}
+
+.comperea {
+    z-index: 1;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+ul {
+    list-style: initial;
+    padding-left: 30px;
+}
+
+li {
+    padding: 0px;
+    margin-bottom: 8px;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li button {
+    margin-left: 15px;
+    background-color: #f9a1b4;
+    z-index: 2;
+}
+
+li button:hover {
+    background-color: #fc7e9a;
+}
+
+/* イラストの設定 */
+.comp_img {
+    min-height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 36%;
+    left: 55%;
+}

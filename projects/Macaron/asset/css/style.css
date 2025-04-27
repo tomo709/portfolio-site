@@ -1,0 +1,681 @@
+@charset "utf-8";
+
+/* ベースルール */
+:root {
+    --main-color: #ff9494;
+    --base-color: #fff5e4;
+    --text-color: #565656;
+}
+
+/* フォント設定 */
+html {
+    font-size: 62.5%; /* 基準フォントサイズを10pxに揃える */
+    font-family: "Kiwi Maru", "Miss Fajardose", "Dancing Script", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* 画像の設定 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ハンバーガーメニューの設定 */
+/* 三本線の設定 */
+.hamburger {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+}
+
+.hamburger_line {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background: var(--main-color);
+    top: 16px;
+}
+.hamburger_line::before,
+.hamburger_line::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--main-color);
+    transition: transform 0.4s;
+}
+.hamburger_line::before {
+    top: -10px;
+}
+.hamburger_line::after {
+    bottom: -10px;
+}
+/* ハンバーガーメニューを開いてる時のボタン*/
+.hamburger-active {
+    background: transparent;
+}
+.hamburger_line.active::before {
+    top: 0;
+    transform: rotate(405deg); /* クリック後に回転 */
+}
+
+.hamburger_line.active2::after {
+    bottom: 0;
+    transform: rotate(-405deg);
+}
+
+/* ボタン押すと出てくるハンバーガーメニューの見た目設定 */
+.g-nav {
+    position: fixed;
+    top: 0;
+    right: -150%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #ffe3e1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.5s ease-out;
+}
+/* ハンバーガーメニューの文字設定 */
+.g-nav li {
+    height: auto;
+    padding: 0.5em 0;
+    margin: 0.5em;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    color: var(--main-color);
+    border-bottom: var(--main-color) 1px solid;
+}
+/* アニメーション後のメニューの状態 */
+.nav-active {
+    right: 0;
+    z-index: 2;
+}
+
+/* PC版にするとハンバーガーメニューは非表示になる */
+@media (width > 800px) {
+    .hamburger {
+        display: none;
+    }
+}
+@media (width > 800px) {
+    .g-nav {
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 30px;
+        z-index: 3;
+    }
+    .g-nav ul {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+    }
+    .g-nav li {
+        margin-left: 1em;
+        letter-spacing: 1px;
+        border: none;
+        font-size: 25px;
+        text-shadow: 2px 2px 2px #ffa4a4;
+    }
+    .g-nav a {
+        padding: 0;
+    }
+    .g-nav li:hover {
+        opacity: 0.5;
+        border-bottom: 1px solid var(--main-color);
+    }
+}
+
+/*header部分の設定*/
+.header {
+    width: 100vw;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* 30%透明 */
+    z-index: 1;
+}
+.header_inner {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_icon {
+    width: 50px;
+    margin: 8px;
+}
+/*画面が大きくなった時のheader部分の設定*/
+@media (800px < width) {
+    .header_icon {
+        width: 100px;
+        margin: 8px;
+    }
+}
+
+/* kvの設定 */
+.kv_img img {
+    width: 100%;
+    height: 720px;
+    object-fit: cover;
+    object-position: left;
+    position: relative;
+    z-index: -1;
+}
+.kv_circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: -100px;
+    right: 40px;
+    z-index: 0;
+    opacity: 0.2;
+}
+.circle2 {
+    top: -20px;
+    right: -120px;
+}
+.kv_slogan {
+    position: absolute;
+    font-size: 4.5rem;
+    top: 100px;
+    right: 20px;
+    color: #fff;
+    text-shadow: 5px 5px 7px #a96262;
+    font-family: "Dancing Script", sans-serif;
+}
+/* 画面が大きくなった時のkvの設定 */
+@media (800px < width) {
+    .kv_img img {
+        height: 740px;
+    }
+    .kv_slogan {
+        font-size: 8rem;
+        top: 300px;
+        right: 40px;
+    }
+    .kv_circle {
+        width: 600px;
+        height: 600px;
+        top: 130px;
+        right: -330px;
+    }
+    .circle2 {
+        top: 400px;
+        right: -150px;
+    }
+}
+
+/* mainの共通設定 */
+.main {
+    background-color: var(--base-color);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.inner {
+    position: relative;
+    max-width: 1100px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (width>830px) {
+    .inner {
+        padding-left: 0px;
+        padding-right: 0px;
+        z-index: 2;
+    }
+}
+.News,
+.Contact {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 60px;
+    background-color: #fff;
+    padding: 10px 5px 5px;
+}
+.Menu,
+.Shop {
+    background-color: #fff;
+    margin-top: 60px;
+    border-radius: 200px 200px 0px 0px;
+    padding: 10px 5px 5px;
+}
+.About-box,
+.News-box,
+.Contact-box {
+    padding: 20px 5px;
+    margin: 60px 20px;
+    border: 1px solid var(--main-color);
+}
+.Menu-box,
+.Shop-box {
+    margin: 60px 40px;
+    border-radius: 200px 200px 0px 0px;
+    border: 1px solid var(--main-color);
+    padding-top: 5em;
+}
+
+.contents_title {
+    text-align: center;
+    color: transparent;
+    border-bottom: 2px dashed var(--main-color);
+    margin: 0 2em;
+    -webkit-text-stroke: 1.2px var(--main-color);
+    font-family: "Dancing Script", "sans-serif";
+}
+
+.contents_title h2 {
+    margin-bottom: 25px;
+    font-size: 7vw;
+}
+/* リンク先に飛んだ時の上の余白設定 */
+.contents_title:before {
+    content: "";
+    display: block;
+    height: 150px; /* 調整したい高さ */
+    margin-top: -150px; /* heightと同じサイズのネガティブマージン */
+    visibility: hidden; /*見えないようにする*/
+}
+/* 画面が大きくなった時のmain共通設定 */
+@media (800px < width) {
+    .News,
+    .Contact {
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .contents_title {
+        margin: 0 7em;
+    }
+    .About-box,
+    .News-box,
+    .Contact-box {
+        margin: 80px 50px;
+    }
+    .Menu-box,
+    .Shop-box {
+        margin: 80px 100px;
+    }
+    .main {
+        position: relative;
+        z-index: 1;
+    }
+    .contents_title h2 {
+        font-size: 3.5vw;
+    }
+    .main a:hover {
+        opacity: 0.5;
+    }
+    .Contact_img:hover,
+    .Shop_img:hover {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+}
+
+/* Aboutの設定 */
+.About {
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 10px 5px 5px;
+}
+.About-box {
+    background-image: url(../img/about-img.jpeg);
+    background-size: cover;
+    background-position: center;
+    /* 画像を薄く見せるために白をかける */
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.About-box h2 {
+    margin-bottom: 0;
+}
+.About-box p {
+    color: var(--text-color);
+    margin: 1.5em 2em;
+    text-shadow: 2px 2px 2px #878787;
+    text-align: start;
+}
+.contents_title h3 {
+    margin-bottom: 25px;
+    font-size: 3.5vw;
+}
+/* 画面が大きくなった時のAbout設定 */
+@media (800px < width) {
+    .About {
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .About-box p {
+        font-size: 2rem;
+        max-width: 450px;
+        margin: 2em auto;
+    }
+    .contents_title h3 {
+        font-size: 2.5vw;
+    }
+}
+
+/* Menuの設定 */
+.macaron_img p {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--main-color);
+    padding-bottom: 60px;
+}
+
+.Menu_btn,
+.News_btn {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.Menu_btn a,
+.News_btn a {
+    font-size: 2rem;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    padding: 15px 25px;
+    box-shadow: 2px 2px 3px #9f5a5a;
+}
+
+/* スライドショー設定 */
+.macaron_img {
+    margin-top: 50px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.macaron_img img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+/* ボタン部分の上書き */
+.slick-prev:before,
+.slick-next:before {
+    color: #ff69b4;
+    font-size: 35px;
+}
+.slick-prev {
+    left: -15px;
+}
+.slick-next {
+    right: -2px;
+}
+.slick-dots {
+    margin-bottom: 30px;
+}
+.slick-dots li button:before {
+    font-size: 15px;
+    margin-right: 10px;
+    color: var(--main-color);
+}
+.slick-dots li.slick-active button:before {
+    color: var(--main-color);
+}
+/* 画面が大きくなった時のMenu設定 */
+@media (800px < width) {
+    .macaron_img img {
+        height: 300px;
+    }
+    .macaron_img p {
+        font-size: 3rem;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 40px;
+    }
+    .slick-dots li button:before {
+        font-size: 20px;
+    }
+    .Menu_btn a,
+    .News_btn a {
+        font-size: 3rem;
+    }
+}
+
+/* Newsの設定 */
+.News_item {
+    display: flex;
+    margin: 40px 10px;
+    background-color: #ffe3e1;
+    border-radius: 0 30px 30px;
+    box-shadow: 2px 2px 10px #9f5a5a;
+    transition: 1s;
+}
+.News_img {
+    background-image: url(../img/Xmasnews.jpeg);
+    background-position: center;
+    width: 60%;
+    background-size: cover;
+}
+.News_text {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 50px;
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px #878787;
+}
+.News_text h3 {
+    margin-top: 3px;
+    font-size: 1.3rem;
+}
+.img2 {
+    background-image: url(../img/onlineshopnwes.jpg);
+}
+/* 画面が大きくなった時のNewsの設定 */
+@media (800px < width) {
+    .News_item {
+        margin: 40px 60px;
+        height: 200px;
+    }
+    .News_img {
+        width: 50%;
+    }
+    .News_text {
+        margin-left: 30px;
+    }
+    .News_text h3 {
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+    .News_text h4 {
+        font-size: 1.5rem;
+    }
+    .News_item:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Shopの設定 */
+.Shop_contents {
+    text-align: center;
+}
+.Shop_img {
+    margin: 60px 20px;
+    background-image: url(../img/shop-img.jpeg);
+    padding: 1.5em 0;
+    background-size: cover;
+    background-position: center;
+    /* 画像を薄く見せるために白をかける */
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+    /* 画像が消えないよう明るくする */
+    filter: brightness(1);
+    font-size: 2.1rem;
+    border: 1px solid var(--main-color);
+    transition: 1s;
+    box-shadow: 2px 2px 10px #a46868;
+}
+.img4 {
+    background-image: url(../img/onlineshop-img.jpeg);
+}
+/* クリックの範囲増やす */
+.Shop_img a {
+    padding: 5vh 10vw;
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px #878787;
+}
+/* 画面が大きくなった時のShopの設定 */
+@media (800px < width) {
+    .Shop_img {
+        margin: 60px 200px;
+        font-size: 3rem;
+    }
+}
+
+/* Contactの設定 */
+.Contact-box p {
+    margin-top: 20px;
+    color: var(--text-color);
+    font-size: 4vw;
+    text-shadow: 2px 2px 2px #878787;
+    text-align: center;
+}
+
+.Contact_img {
+    margin: 50px 20px;
+    background-image: url(../img/contact-img.jpeg);
+    padding: 1.5em 0;
+    background-size: cover;
+    background-position: center;
+    /* 画像を薄く見せるために白をかける */
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+    font-size: 2.1rem;
+    border: 1px solid var(--main-color);
+    text-align: center;
+    transition: 1s;
+    box-shadow: 2px 2px 10px #a46868;
+}
+.Contact_img a {
+    padding: 5vh 10vw;
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px #878787;
+}
+/* 画面が大きくなった時のContactの設定 */
+@media (800px < width) {
+    .Contact-box p {
+        font-size: 2vw;
+    }
+    .Contact_img {
+        margin: 60px 120px;
+        font-size: 3rem;
+    }
+}
+
+/* footerの設定 */
+.footer {
+    background-color: var(--main-color);
+    padding: 10px;
+}
+.footer_inner {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+.copyright {
+    color: #fff;
+    font-size: 1.2rem;
+}
+/* 画面が大きくなった時のfooterの設定 */
+@media (800px < width) {
+    .footer {
+        padding: 20px;
+    }
+    .copyright {
+        font-size: 1.5rem;
+    }
+}
+
+/* 要素をふんわり表示させる */
+.fadeIn_left {
+    opacity: 0;
+    transform: translate(-50%, 0);
+    transition: 2.5s;
+}
+.fadeIn_right {
+    opacity: 0;
+    transform: translate(50%, 0);
+    transition: 2.5s;
+}
+.is-show {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+/* topに戻るボタン設定 */
+.page_top {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: var(--main-color);
+    opacity: 0.7;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 1s;
+    z-index: 5;
+}
+.page_top a:hover {
+    opacity: 0.5;
+}
+
+.page_top a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+}
+.page_top a::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f106";
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -17px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}

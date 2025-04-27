@@ -1,0 +1,107 @@
+html {
+    padding: 100px;
+    background-color: #FFF5E4;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Kiwi Maru", serif;
+}
+
+body {
+    margin-bottom: 100px;
+}
+
+
+/* 泡だて器の画像 */
+.backimg {
+    background-image: url(../img/bowl.png);
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* 調理開始ボタン */
+.TextArea {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.cookStartButton {
+    margin: 0 auto;
+    background-color: #FFA725;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* 選択肢エリア,結果表示エリアの設定 */
+.ansArea,
+.resultArea {
+    margin: 0 auto 50px;
+    text-align: center;
+    background-color: #C1D8C3;
+    height: auto;
+    width: 500px;
+    padding: 50px;
+    border-radius: 15px;
+}
+
+.resultArea {
+    margin-top: 50px;
+}
+
+/* 問題文 */
+.question {
+    font-size: 20px;
+    margin: 20px;
+}
+
+/* 選択肢ボタン */
+.answerButton {
+    background-color: #6A9C89;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 18px;
+    margin: 5px;
+}
+
+/* 結果の文字 */
+.result {
+    display: inline;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-top: solid 3px #6A9C89;
+    border-bottom: solid 3px #6A9C89;
+}
+
+/* 完成したものの画像設定 */
+.planeCookie,
+.cocoaChocolate,
+.chocolateChip,
+.matcha {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.planeCookie {
+    background-image: url(../img/plain.png);
+}
+
+.chocolateChip {
+    background-image: url(../img/chocolatechip.png);
+}
+
+.cocoaChocolate {
+    background-image: url(../img/cocoachocolatechip.png);
+}
+
+.matcha {
+    background-image: url(../img/mattya.png);
+}

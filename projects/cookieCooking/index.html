@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/destyle.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="section">
+        <!-- 泡だて器のイラスト -->
+        <div class="backimg" id="bowl"></div>
+
+        <div class="resultArea" id="resultArea">
+            <!-- 結果 -->
+            <div class="resultbox" id="resultbox">
+                <h2 class="result" id="result"></h2>
+            </div>
+            <!-- 完成したもの -->
+            <div id="Ending">
+                <div class="planeCookie" id="planeCookie"></div>
+                <div class="cocoaChocolate" id="cocoaChocolate"></div>
+                <div class="chocolateChip" id="chocolateChip"></div>
+                <div class="matcha" id="matcha"></div>
+            </div>
+        </div>
+        <div class="TextArea">
+            <button onclick="ansStart()" class="cookStartButton" id="cookStartButton">調理を始める！</button>
+        </div>
+        <div class="ansArea" id="ansArea">
+            <!-- 問題文 -->
+            <div class="queBox" id="queText">
+                <div class="questionbox" id="questionbox">
+                    <h2 class="question" id="question"></h2>
+                </div>
+            </div>
+            <div class="answerButton0" id="ansText">
+                <!-- 解答ボタン -->
+                <button onclick="answerButton(1)" class="answerButton" id="answerButton1"></button>
+                <button onclick="answerButton(2)" class="answerButton" id="answerButton2"></button>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
